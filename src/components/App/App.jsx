@@ -1,10 +1,14 @@
 import { Layout } from 'components/Layout/Layout';
-import { FormBar } from 'components/AppBar/AppBar';
+import { ContactForm } from 'components/ContactForm/ContactForm';
+import { Filter } from 'components/Filter/Filter';
+import { ContactList } from 'components/ContactList/ContactList';
 
 export const App = () => {
   return (
     <Layout>
-      <FormBar />
+      <ContactForm />
+      <Filter />
+      <ContactList />
     </Layout>
   );
 };
