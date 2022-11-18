@@ -12,3 +12,30 @@ export const ContactList = () => {
     </List>
   );
 };
+
+// export const ContactList = () => {
+//   const contacts = useSelector(state => state.contacts.contacts);
+//   const filteredContacts = useSelector(
+//     state => state.contacts.filteredContacts
+//   );
+//   console.log(contacts);
+//   console.log(filteredContacts);
+
+//   return (
+//     <List>
+//       {filteredContacts.length > 0 ? (
+//         <div>
+//           {filteredContacts.map(contact => {
+//             return <ContactItem key={contact.id} {...contact} />;
+//           })}
+//         </div>
+//       ) : (
+//         <div>
+//           {contacts.map(contact => {
+//             return <ContactItem key={contact.id} {...contact} />;
+//           })}
+//         </div>
+//       )}
+//     </List>
+//   );
+// };

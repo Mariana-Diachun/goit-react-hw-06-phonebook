@@ -19,9 +19,7 @@ export const ContactForm = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = (values, { resetForm }) => {
-    console.log(values);
     dispatch(addContact(values));
-    console.log(dispatch);
     resetForm({ name: '', number: '' });
   };
 
