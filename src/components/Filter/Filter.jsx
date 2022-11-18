@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useState, useEffect } from 'react';
 import { nanoid } from 'nanoid';
 import { searchByName } from 'redux/contactsSlice';
@@ -6,8 +6,8 @@ import { Box, Label, InputSearch } from 'components/Filter/Filter.styled';
 
 export const Filter = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(state => state.contacts.contacts);
-  const filteredContacts = useSelector(state => state.contacts.filteredUsers);
+  // const contacts = useSelector(state => state.contacts.contacts);
+  // const filteredContacts = useSelector(state => state.contacts.filteredUsers);
 
   const [searchName, setSearchName] = useState('');
   const inputID = nanoid();
