@@ -1,24 +1,13 @@
-import { useDispatch } from 'react-redux';
-import { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { nanoid } from 'nanoid';
 import { searchByName } from 'redux/contactsSlice';
 import { Box, Label, InputSearch } from 'components/Filter/Filter.styled';
+import { getFilter } from 'redux/selectors';
 
 export const Filter = () => {
   const dispatch = useDispatch();
-  // const contacts = useSelector(state => state.contacts.contacts);
-  // const filteredContacts = useSelector(state => state.contacts.filteredUsers);
-
-  const [searchName, setSearchName] = useState('');
+  const filter = useSelector(getFilter);
   const inputID = nanoid();
-
-  const changeSearchName = e => {
-    setSearchName(e.target.value);
-  };
-
-  useEffect(() => {
-    dispatch(searchByName(searchName));
-  }, [searchName, dispatch]);
 
   return (
     <Box>
@@ -27,9 +16,9 @@ export const Filter = () => {
         <InputSearch
           id={inputID}
           type="text"
-          value={searchName}
+          value={filter}
           name="filter"
-          onChange={changeSearchName}
+          onChange={e => dispatch(searchByName(e.target.value))}
         />
       </Label>
     </Box>

@@ -4,8 +4,7 @@ const contactsSlice = createSlice({
   name: 'contacts',
   initialState: {
     contacts: [],
-    filteredContacts: [],
-    search: '',
+    filter: '',
   },
   reducers: {
     addContact(state, action) {
@@ -21,14 +20,7 @@ const contactsSlice = createSlice({
       );
     },
     searchByName(state, action) {
-      const filteredContacts = state.contacts.filter(contact =>
-        contact.name.toLowerCase().includes(action.payload.toLowerCase())
-      );
-      return {
-        ...state,
-        filteredContacts:
-          action.payload.length > 0 ? filteredContacts : [...state.contacts],
-      };
+      state.filter = action.payload;
     },
   },
 });
