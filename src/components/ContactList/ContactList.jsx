@@ -10,6 +10,7 @@ export const ContactList = () => {
   const filteredContacts = contacts.filter(contact =>
     contact.name.toLowerCase().includes(filter.toLowerCase())
   );
+
   if (filteredContacts) {
     return (
       <List>
